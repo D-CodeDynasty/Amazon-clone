@@ -140,7 +140,7 @@ span {
 /**bannerr section**/
 
 .banner-section {
-    background-image: url(amazonbanner.jpg);
+    background-image: url(logo-banner/amazonbanner.jpg);
     height: 600px;
     /* display: flex; */
     background-size: contain;
