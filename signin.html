@@ -37,23 +37,15 @@
     <div class="login-container2">
         <h2>Sign-In</h2>
         <label for="email"><strong>E-mail</strong></label><br><br>
-        <input type="email" id="email" name="email"><br>
+        <input type="email" id="email" name="email" required><br>
         <label for="password"><strong>Password</strong></label><br><br>
-        <input type="password" id="password" name="email"><br><br>
-        <input type="submit" value="Sign In" class="submit-button">
+        <input type="password" id="password" name="email" minlength="5" required><br><br>
+        <input type="submit" value="Sign In" class="submit-button" onclick="signInAlert()">
         <p class="box">By using the Amazon.in Clone website, you signify your agreement to be bound by Amazon service
             Condition.</p>
         <p class="box2">Create Your Amazon Account</p>
     </div>
-    <script>
-        function showMessage() {
-            const message = document.createElement('p');
-            message.className = 'box2';
-            message.textContent = 'Create Your Amazon Account';
-            document.querySelector('.item').appendChild(message);
-        }
-    </script>
     </div>
+    <script src="Scripts.js"></script>
 </body>
-
 </html>
