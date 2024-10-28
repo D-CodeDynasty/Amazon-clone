@@ -191,6 +191,7 @@ span {
 }
 
 
+
 header,
 .main-container,
 .banner-section,
@@ -606,11 +607,8 @@ header,
     width: 800px;
     padding: 40px;
     background-color: #ffffff;
-    /* position: absolute; */
     margin-left: 10%;
     margin-right: 50%;
-    /* left: 10%; */
-    /* right: 120px; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     text-align: center;
@@ -624,8 +622,6 @@ header,
         position: absolute;
         right: 30px;
         height: auto;
-        /* overflow: hidden; */
-        /* object-fit: contain; */
     }
 
 }
@@ -655,9 +651,10 @@ header,
     border: 1px solid #000000;
     border-radius: 2px;
     box-sizing: border-box;
+    cursor: text;
 }
 
-.login-container2 input[type="submit"] {
+.login-container2 button[type="button"] {
     width: 50%;
     height: 42px;
     padding: 15px;
@@ -670,6 +667,28 @@ header,
     font-size: 14px;
     font-weight: 700;
 }
+
+@media screen and (max-width: 601px) {
+    .login-container2 #submit-error {
+        /* max-width:100%; */
+        position: absolute;
+        bottom: 218px; 
+        left: 500px;
+    }
+    .login-container2 #
+    /* .login-container2 #submit-error i {
+        margin-left: 185px;
+    } */
+}
+
+@media screen and (min-width: 1366px) {
+    .login-container2 #submit-error  {
+        position: absolute;
+        bottom: 330px; 
+        left: 620px;
+    }
+}
+
 
 .box {
     background: rgb(233, 231, 231);
@@ -693,8 +712,9 @@ header,
 
 }
 
-.login-container2 input[type="submit"]:hover {
+.login-container2 button[type="button"]:hover {
     background-color: hsl(42, 76%, 59%);
+    cursor: pointer;
 }
 
 .box2 {
@@ -702,14 +722,9 @@ header,
     padding: 7px;
     width: 360px;
     font-size: 15px;
-    /* position: absolute; */
-    /* margin-top: 0; */
     margin-right: 20px;
     margin-left: 46.4%;
-    /* right: 20px; */
     cursor: pointer;
-    /* left: 46.4%; */
-    /* top: 120%; */
 }
 
 .search-input::placeholder {
@@ -720,15 +735,66 @@ header,
     font-family: Amazon Ember, Arial, sans-serif;
 }
 
+.login-container2 span {
+    color: red;
+    position: relative;
+    bottom: 25px;
+    left: 40%;
+    font-size: 11px;
+    font-family: Arial;
+}
+
+@media screen and (max-width: 601px) {
+    .login-container2 #email-error i {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .login-container2 #email-error i {
+        margin-left: 40px;
+    }
+}
+
+.login-container2 #password-error {
+    position: absolute;
+    top: 39%;
+    right: 22%;
+}
+
+.login-container2 span i {
+    color: seagreen;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 601px) {
+    .login-container2 #password-error {
+        /* max-width: 10%; */
+        position: relative;
+        bottom: 42px;
+        left: 215px;
+    }
+    .login-container2 #password-error i {
+        margin-left: 185px;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .login-container2 #password-error {
+        position: relative;
+        bottom: 42px;
+        left: 215px;
+    }
+    .login-container2 #password-error i {
+        margin-left: 185px;
+    }
+} 
 
 /**cart page***/
 
 .shopping {
     display: flex;
     flex-wrap: wrap;
-    /* height: 200px; */
-    /* position: relative; */
-    /* top: 15px; */
     margin-bottom: 125px;
     background-color: #ffffff;
 }
@@ -786,25 +852,23 @@ header,
 
 /**cart items*/
 
-.container {
+.js-container, .js-container-two, .js-container-three, .js-container-four {
     display: flex;
     align-items: center;
     max-width: 70%;
     overflow: hidden;
     justify-content: space-between;
-    /* border: 1px solid rgb(29, 27, 27); */
     padding: 40px;
     margin-bottom: 10px;
     background-color: #fff;
     border-radius: 5px;
-    /* width: 70%; */
     height: 280px;
     box-shadow: 2px 4px 10px #777;
 }
 
 
 @media screen and (max-width: 1144px) {
-    .container {
+    .js-container, .js-container-two, .js-container-three, .js-container-four {
         position: absolute;
         top: 90px;
         transition: 0.3s ease-in-out;
@@ -814,7 +878,7 @@ header,
 
 
 
-.container {
+.js-container, .js-container-two, .js-container-three, .js-container-four {
     /* remove */
     position: relative;
     bottom: 200px;
@@ -822,43 +886,50 @@ header,
 
 
 
-.photo img {
+.photo img, .photo-two img, .photo-three img, .photo-four img {
     width: 160px;
     height: auto;
     border-radius: 5px;
 }
 
-.details {
+.details, .details-two, .details-three, .details-four {
     flex-grow: 1;
     margin-left: 20px;
 }
 
+.details span, .details-two span, .details-three span, .details-four span {
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
 
-.product-name {
+
+.product-name, .product-name-two, .product-name-three, .products-name-four {
     margin: 0;
     font-size: 16px;
     font-weight: bold;
 }
 
-.rating {
+.rating, .rating-two, .rating-three, .rating-four {
     display: flex;
     margin-top: 5px;
 }
 
-.rating span {
+.rating span, .rating-two span, .rating-three span, .rating-four {
     margin-right: 2px;
     font-size: 18px;
     margin-top: 20px;
 }
 
-.price {
+.price, .price-two, .price-three, .price-four {
     font-size: 18px;
     font-weight: bold;
     margin-top: 30px;
 }
 
-.remove-button {
+.remove-button, .remove-button-two, .remove-button-three, .remove-button-four  {
     margin-top: 20px;
+    margin-left: 20px;
     padding: 5px 10px;
     background-color: #f0c14b;
     border: 1px solid #a88734;
@@ -869,6 +940,6 @@ header,
     font-weight: bold;
 }
 
-.remove-button:hover {
+.remove-button:hover, .remove-button-two:hover, .remove-button-three:hover, .remove-button-four:hover {
     background-color: #e2ac37;
 }
