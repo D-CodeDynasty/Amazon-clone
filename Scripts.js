@@ -1,3 +1,16 @@
+import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
+hello();
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+import {cart, addToCart, Cart2, Cart3, Cart4} from '../Data/cart.js';
+import { products, productITEM, productLIST, productsHTML4 } from '../Data/products.js';
+
+const today = dayjs();
+const deliveryDate = today.add(7, 'days');
+console.log(deliveryDate.format('dddd, MMMM, D'));
+
+
+
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -13,7 +26,7 @@ products.forEach((product) => {
                 </span>
                 <img src="${product.image}" alt=""><br>
                 <div class="js-added"></div>
-                <button class="js-add-cart1" data-product-name="${product.name}">Add to Cart</button>
+                <button class="js-add-cart1" data-product-id="${product.id}">Add to Cart</button>
             </div>
 `;
 })
@@ -21,41 +34,25 @@ products.forEach((product) => {
 console.log(productsHTML);
 
 
+function updateCartQuantity() {
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    });
+
+    document.querySelector('.js-increment').innerHTML = cartQuantity;
+}
+
 document.querySelector('.js-products').innerHTML = productsHTML;
 
 document.querySelectorAll('.js-add-cart1')
     .forEach((button) => {
         button.addEventListener('click', () => {
-            const productName = button.dataset.productName;
+            const productId = button.dataset.productId;
+            addToCart(productId);
+            updateCartQuantity();
 
-            let matchingItem;
-
-            cart.forEach((item) => {
-                if (productName === item.productName) {
-                    matchingItem = item;
-                }
-            })
-
-            if (matchingItem) {
-                matchingItem.quantity += 1;
-            } else {
-                cart.push({
-                    productName: productName,
-                    quantity: 1
-                });
-            }
-
-            // alert('Item added to cart!');
-
-            let cartQuantity = 0;
-
-
-            cart.forEach((item) => {
-                cartQuantity += item.quantity;
-            });
-
-
-            document.querySelector('.js-increment').innerHTML = cartQuantity;
 
             let timeoutId;
 
@@ -89,9 +86,6 @@ document.querySelectorAll('.js-add-cart1')
     });
 
 
-
-
-
 let productsHTML2 = '';
 
 productITEM.forEach((product) => {
@@ -107,49 +101,31 @@ productITEM.forEach((product) => {
         </span>
         <img id="blue" src="${product.image}" alt=""><br>
         <div class="js-display1"></div>
-        <button class="js-add-cart2" data-product-name="${product.name}">Add to Cart</button>
+        <button class="js-add-cart2" data-product-id="${product.id}">Add to Cart</button>
     </div>
     `;
 });
 
 console.log(productsHTML2);
 
+function updateQuantity2() {
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    });
+
+    document.querySelector('.js-increment').innerHTML = cartQuantity;
+}
+
 document.querySelector('.js-products2').innerHTML = productsHTML2;
 
 document.querySelectorAll('.js-add-cart2')
     .forEach((button) => {
         button.addEventListener('click', () => {
-            const valueName = button.dataset.valueName;
-
-            let matchingItem;
-
-            cart.forEach((item) => {
-                if (valueName === item.valueName) {
-                    matchingItem = item;
-                }
-            })
-
-            if (matchingItem) {
-                matchingItem.quantity += 1;
-            } else {
-                cart.push({
-                    valueName: valueName,
-                    quantity: 1
-                });
-            }
-
-
-            // alert('Item added to cart!');
-
-            let cartQuantity = 0;
-
-
-            cart.forEach((item) => {
-                cartQuantity += item.quantity;
-            });
-
-
-            document.querySelector('.js-increment').innerHTML = cartQuantity;
+            const productId = button.dataset.productId;
+            Cart2(productId);
+            updateQuantity2();
 
             let timeoutId;
 
@@ -158,18 +134,17 @@ document.querySelectorAll('.js-add-cart2')
 
             addCartButtons2.forEach((button, index) => {
                 button.addEventListener('click', () => {
-                    const messageDisplay = messageElement2[index]; // Use the specific element at the current index
+                    const messageDisplay = messageElement2[index]; 
 
-                    if (messageDisplay) {  // Check if the specific messageDisplay element exists
+                    if (messageDisplay) {  
                         messageDisplay.classList.add('added-visible-js');
                         messageDisplay.innerHTML = 'Added';
 
-                        // Clear the previous timeout (if any) to reset the timer
+    
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
 
-                        // Set a new timeout to hide the message after 2 seconds
                         timeoutId = setTimeout(() => {
                             messageDisplay.classList.remove('added-visible-js');
                             messageDisplay.innerHTML = '';
@@ -178,69 +153,48 @@ document.querySelectorAll('.js-add-cart2')
                 });
             });
 
-
             console.log(cart);
-
         });
     });
-
-
 
 
 let productsHTML3 = '';
 
 
-productLIST.forEach((value) => {
+productLIST.forEach((product) => {
     productsHTML3 += `
     <div>
-        <p>${value.name}</p><br>
-        <h4><small>₹</small>${value.price}</h4>
+        <p>${product.name}</p><br>
+        <h4><small>₹</small>${product.price}</h4>
         <span id="rate">
-            <p>${'⭐'.repeat(value.rating.stars)}</p>
+            <p>${'⭐'.repeat(product.rating.stars)}</p>
         </span>
-        <img src="${value.image}" alt=""><br>
+        <img src="${product.image}" alt=""><br>
         <div class="js-display3"></div>
-        <button class="js-add-cart3" data-value-name="${value.name}">Add to Cart</button>
+        <button class="js-add-cart3" data-product-id="${product.id}">Add to Cart</button>
     </div>
     `;
 });
 
+
+function updateQuantity3() {
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    });
+
+    document.querySelector('.js-increment').innerHTML = cartQuantity;
+}
 
 document.querySelector('.js-products3').innerHTML = productsHTML3;
 
 document.querySelectorAll('.js-add-cart3')
     .forEach((button) => {
         button.addEventListener('click', () => {
-            const valueName = button.dataset.valueName;
-
-            let matchingItem;
-
-            cart.forEach((item) => {
-                if (valueName === item.valueName) {
-                    matchingItem = item;
-                }
-            })
-
-            if (matchingItem) {
-                matchingItem.quantity += 1;
-            } else {
-                cart.push({
-                    valueName: valueName,
-                    quantity: 1
-                });
-            }
-
-            // alert('Item added to cart!');
-
-            let cartQuantity = 0;
-
-
-            cart.forEach((item) => {
-                cartQuantity += item.quantity;
-            });
-
-
-            document.querySelector('.js-increment').innerHTML = cartQuantity;
+            const productId = button.dataset.productId;
+            Cart3(productId);
+            updateQuantity3();
 
             let timeoutId;
 
@@ -249,18 +203,17 @@ document.querySelectorAll('.js-add-cart3')
 
             addToCartButtons3.forEach((button, index) => {
                 button.addEventListener('click', () => {
-                    const messageDisplay3 = messageElement3[index]; // Use the specific element at the current index
+                    const messageDisplay3 = messageElement3[index]; 
 
-                    if (messageDisplay3) {  // Check if the specific messageDisplay element exists
+                    if (messageDisplay3) {  
                         messageDisplay3.classList.add('added-visible-js3');
                         messageDisplay3.innerHTML = 'Added';
 
-                        // Clear the previous timeout (if any) to reset the timer
+                    
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
 
-                        // Set a new timeout to hide the message after 2 seconds
                         timeoutId = setTimeout(() => {
                             messageDisplay3.classList.remove('added-visible-js3');
                             messageDisplay3.innerHTML = '';
@@ -277,55 +230,40 @@ document.querySelectorAll('.js-add-cart3')
 
 let productlistHTMl = '';
 
-productsHTML4.forEach((value) => {
+productsHTML4.forEach((product) => {
     productlistHTMl += `
     <div>
-        <p>${value.name}</p><br>
-        <h4><small>₹</small>${value.price}</h4>
+        <p>${product.name}</p><br>
+        <h4><small>₹</small>${product.price}</h4>
         <span id="rate">
-            ${'⭐'.repeat(value.rating.stars)}
+            ${'⭐'.repeat(product.rating.stars)}
         </span>
-        <img src="${value.image}" alt=""><br>
+        <img src="${product.image}" alt=""><br>
         <div class="js-display4"></div>
-        <button class="js-add-cart4" data-value-name="${value.name}">Add to Cart</button>
+        <button class="js-add-cart4" data-product-id="${product.id}">Add to Cart</button>
     </div>
     `;
 })
 
+
+function updateCart4() {
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    })
+
+    document.querySelector('.js-increment').innerHTML = cartQuantity;
+}
 
 document.querySelector('.js-products4').innerHTML = productlistHTMl;
 
 document.querySelectorAll('.js-add-cart4')
     .forEach((button) => {
         button.addEventListener('click', () => {
-            const valueName = button.dataset.valueName;
-
-            let matchingItem;
-
-            cart.forEach((item) => {
-                if (valueName === item.valueName) {
-                    matchingItem = item;
-                }
-            })
-
-            if (matchingItem) {
-                matchingItem.quantity += 1;
-            } else {
-                cart.push({
-                    valueName: valueName,
-                    quantity: 1
-                });
-            }
-
-            // alert('Item added to cart!');
-
-            let cartQuantity = 0;
-
-            cart.forEach((item) => {
-                cartQuantity += item.quantity;
-            })
-
-            document.querySelector('.js-increment').innerHTML = cartQuantity;
+            const productId = button.dataset.productId;
+            Cart4(productId);
+            updateCart4();
 
             let timeoutId;
 
@@ -334,18 +272,16 @@ document.querySelectorAll('.js-add-cart4')
 
             addToCartButtons4.forEach((button, index) => {
                 button.addEventListener('click', () => {
-                    const messageDisplay4 = messageElement4[index]; // Use the specific element at the current index
+                    const messageDisplay4 = messageElement4[index];
 
-                    if (messageDisplay4) {  // Check if the specific messageDisplay element exists
+                    if (messageDisplay4) {  
                         messageDisplay4.classList.add('added-visible-js4');
                         messageDisplay4.innerHTML = 'Added';
-
-                        // Clear the previous timeout (if any) to reset the timer
+                        
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
 
-                        // Set a new timeout to hide the message after 2 seconds
                         timeoutId = setTimeout(() => {
                             messageDisplay4.classList.remove('added-visible-js4');
                             messageDisplay4.innerHTML = '';
@@ -358,6 +294,3 @@ document.querySelectorAll('.js-add-cart4')
 
         });
     });
-
-
-
