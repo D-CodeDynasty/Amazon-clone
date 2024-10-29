@@ -65,11 +65,9 @@ document.querySelectorAll('.js-delete-link')
             container.remove();
         });
         JSON.parse(localStorage.getItem('cart'));
-        // resetCart();
     });
 
 
 
-// second-product
 
 

@@ -10,7 +10,6 @@ const deliveryDate = today.add(7, 'days');
 console.log(deliveryDate.format('dddd, MMMM, D'));
 
 
-
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -176,6 +175,8 @@ productLIST.forEach((product) => {
     `;
 });
 
+console.log(productsHTML3);
+
 
 function updateQuantity3() {
     let cartQuantity = 0;
@@ -244,6 +245,10 @@ productsHTML4.forEach((product) => {
     </div>
     `;
 })
+
+console.log(productlistHTMl);
+
+
 
 
 function updateCart4() {
