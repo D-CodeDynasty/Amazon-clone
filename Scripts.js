@@ -2,8 +2,8 @@ import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 hello();
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
-import {cart, addToCart, Cart2, Cart3, Cart4} from '../Data/cart.js';
-import { products, productITEM, productLIST, productsHTML4 } from '../Data/products.js';
+import {cart, addToCart, Cart2, Cart3, Cart4} from './Data/cart.js';
+import { products, productITEM, productLIST, productsHTML4 } from './Data/products.js';
 
 const today = dayjs();
 const deliveryDate = today.add(7, 'days');
