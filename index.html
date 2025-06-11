@@ -14,9 +14,24 @@
 
 <body>
     <div class="navbar">
-        <a href="index.html"><img src="logo-banner/amazon_logo.png" alt="logo"></a>
-        <input placeholder="Search Amazon.in" class="search-input">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <a href="index.html"><img id="logo-nav" src="logo-banner/amazon_logo.png" alt="logo"></a>
+        <span class="in">.in</span>
+        <div class="location-bar">
+            <div class="logo">
+                <i class="fa-solid fa-location-dot location-icon"></i>
+            </div>
+            <div class="location-text">
+                <span class="delivery-label">Delivering to Coimbatore</span>
+                <span class="update-location">Update location</span>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input placeholder="Search Amazon.in" class="search-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="En-lang">
+            <img id="inda-flag" src="favicon/icons8-india-48.png" alt="india"><span id="en">EN</span>
+        </div>
         <div class="login">
             <p class="page"><span>Hello Guest</span><br>
                 <a href="signin.html">Sign In</a>
@@ -33,6 +48,26 @@
             <a href="cart.html"><i class="fa-solid fa-cart-shopping" alt="cart-shopping"></i></a>
             <span class="js-increment">0</span>
         </div>
+    </div>
+    <div class="under-heading">
+        <ul>
+            <li></li>
+             <li><i class="fa-solid fa-list-ul"></i> All</li>
+            <li>Fresh</li>
+            <li>MX Player</li>
+            <li>Sell</li>
+            <li>Bestsellers</li>
+            <li>Today'Deals</li>
+            <li>Mobils</li>
+            <li>Customer Service</;>
+            <li>Prime</l>
+            <li>Fashion</l>
+            <li>New Releases</li>
+            <li>Amazon Pay</l>
+            <li>Electronics</l>
+            <li>Home & Kitchen</li>
+            <li>Car & Motorbike</li>
+        </ul>
     </div>
 
     <!--banner section-->
@@ -61,7 +96,9 @@
         <span id="new-cus">New customer?<a href="#">Start here</a></span>
     </section>
     <footer>
-        <a id="back" href="#"><p id="top">Back to top</p></a>
+        <a id="back" href="#">
+            <p id="top">Back to top</p>
+        </a>
         <div class="footer-nav">
             <ul>
                 <p id="head-1">Get to Know Us</p>

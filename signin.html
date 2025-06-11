@@ -13,9 +13,24 @@
 
 <body>
     <div class="navbar">
-        <a href="index.html"><img src="logo-banner/amazon_logo.png" alt=""></a>
-        <input style="width: 900px;" placeholder="Search Amazon.in" class="search-input">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <a href="index.html"><img id="logo-nav" src="logo-banner/amazon_logo.png" alt="logo"></a>
+        <span class="in">.in</span>
+        <div class="location-bar">
+            <div class="logo">
+                <i class="fa-solid fa-location-dot location-icon"></i>
+            </div>
+            <div class="location-text">
+                <span class="delivery-label">Delivering to Coimbatore</span>
+                <span class="update-location">Update location</span>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input placeholder="Search Amazon.in" class="search-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="En-lang">
+            <img id="inda-flag" src="favicon/icons8-india-48.png" alt="india"><span id="en">EN</span>
+        </div>
         <div class="login">
             <p class="page"><span>Hello Guest</span><br>
                 <a href="signin.html">Sign In</a>
@@ -29,8 +44,8 @@
             <h4>Prime</h4>
         </div>
         <div class="cart">
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <span>0</span>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping" alt="cart-shopping"></i></a>
+            <span class="js-increment">0</span>
         </div>
     </div>
     <div class="login-container2">
@@ -47,10 +62,10 @@
                 id="contact-submit">Sign-In</button>
             <span id="submit-error"></span>
         </form>
-            <p class="box">By using the Amazon.in Clone website, you signify your agreement to be bound by Amazon
-                service
-                Condition.</p>
-            <p class="box2">Create Your Amazon Account</p>
+        <p class="box">By using the Amazon.in Clone website, you signify your agreement to be bound by Amazon
+            service
+            Condition.</p>
+        <p class="box2">Create Your Amazon Account</p>
     </div>
     </div>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
