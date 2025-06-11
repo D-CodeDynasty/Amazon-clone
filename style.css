@@ -12,43 +12,104 @@ html {
 
 .navbar {
     height: 60px;
-    background: #000000;
+    background: #131921;
     display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+    justify-content: space-between;
 }
 
-.navbar,
-img {
-    height: 60px;
-    /* object-fit: contain; */
+.location-bar {
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    color: white;
+    flex: 1;
+    margin-bottom: 5px;
+    padding: 0px -5px;
+    font-family: Arial, sans-serif;
+}
+
+.location-icon {
+    font-size: 15px;
+    color: #cccccc;
+    margin-right: 10px;
+}
+
+.location-text .delivery-label {
+    font-size: 12px;
+    color: #cccccc;
+    display: block;
+}
+
+.location-text .update-location {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+
+.En-lang {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.En-lang #inda-flag {
+    height: 30px;
+    width: 30px;
     background-size: cover;
 }
 
+
+.navbar,
+img {
+    height: 70px;
+    background-size: cover;
+}
+
+.navbar #logo-nav {
+    margin-top: 10px;
+}
+
+.navbar .in {
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-top: -2px;
+    margin-left: -20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 4px;
+  padding: 0 8px;
+  width: 600px; 
+  height: 45px; 
+}
+
 .search-input {
-    width: 900px;
-    height: 30px;
-    font-size: 1rem;
-    border: none;
-    margin-top: 14px;
-    margin-left: 29px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
 }
 
-@media screen and (max-width: 768px) {
-    .search-input {
-        margin-left: 0px;
-        width: 300px;
-    }
-}
-
-
-.fa-magnifying-glass {
+.search-bar .fa-magnifying-glass {
     background: #f0c14b;
-    padding: 8px 8px;
-    margin: 14px 15px 10px 0;
-    width: 32px;
-    /* border: 2px solid red; */
+    padding: 15px 28px 27px 20px;
+    margin: 10px -10px 10px 0px;
+    width: 22px;
+    border-radius: 0px 4px 4px 0px;
     font-size: 16px;
-    height: 30px;
+    height: 45px;
 }
+
 
 .return,
 h4 {
@@ -59,7 +120,6 @@ h4 {
 
 .nav {
     margin-right: 20px;
-    margin-top: 11px;
 }
 
 
@@ -69,10 +129,10 @@ h4 {
 }
 
 .page {
-    margin-left: 25px;
+    margin-left: 30px;
     /* background: red; */
     width: 60px;
-    margin-top: 10px;
+    /* margin-top: 0px; */
     margin-right: 20px;
 }
 
@@ -85,14 +145,12 @@ h4 {
 
 .page a {
     color: white;
-    /* background: red; */
     font-weight: 700;
     font-size: 14px;
 }
 
 
 .prime {
-    margin-top: 12px;
     font-size: 14px;
     margin-right: 10px;
 }
@@ -133,7 +191,6 @@ span {
 .cart {
     width: 70px;
     padding-left: 10px;
-    /* padding-right: 10px; */
     height: 30px;
 }
 
@@ -148,12 +205,11 @@ span {
 }
 
 .cart i {
-    font-size: 30px;
-    margin-top: 20px;
+    font-size: 22px;
+    margin-top: 7px;
     margin-right: 20px;
     width: 10px;
     color: #ffffff;
-    font-size: 22px;
 }
 
 .cart span {
@@ -168,16 +224,41 @@ span {
     padding: 20px;
 }
 
+/* under-section */
+
+.under-heading ul {
+    background: #232F3E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.under-heading li {
+    font-size: 14px;
+    padding: 10px;
+    font-weight: bolder;
+    color: white;
+    list-style: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 px 0 0px;
+}
+
+.under-heading .fa-list-ul{
+    color: #a88b22; 
+    margin-right: 10px;
+}
 
 /**bannerr section**/
 
 .banner-section {
     background-image: url(logo-banner/amazonbanner.jpg);
     height: 600px;
-    /* display: flex; */
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+
 
 @media screen and (max-width: 768px) {
     .banner-section {
@@ -254,10 +335,8 @@ header,
 /**first row**/
 
 .image-container div {
-    /* margin: 10px; */
     justify-content: space-evenly;
     width: 420px;
-    /* height: 480px; */
     padding-top: 20px;
     padding-right: 0px;
     padding-left: 15px;
@@ -267,13 +346,9 @@ header,
 }
 
 .image-container {
-    /* width: 450px; */
     display: flex;
     flex-wrap: wrap;
-    /* position: relative; */
-    /* bottom: 290px; */
     margin-left: 10px;
-    /* left: 0; */
 }
 
 
@@ -283,9 +358,7 @@ header,
     height: 280px;
     object-fit: contain;
     align-items: center;
-    /* border: 2px solid red; */
     justify-content: center;
-    /* margin-left: 20px; */
     margin-left: 40px;
 }
 
@@ -295,8 +368,6 @@ header,
 }
 
 .image {
-    /* background: red; */
-    /* border: 2px solid red; */
     max-width: 1200px;
     max-height: 150px;
     object-fit: contain;
@@ -314,7 +385,7 @@ header,
 
 
 .image-container button {
-    background: #ff9900;
+    background: #FFCE12;
     padding: 8px 14px;
     cursor: pointer;
     font-weight: bold;
@@ -324,7 +395,6 @@ header,
     justify-content: center;
     margin-left: 32%;
     margin-bottom: 20px;
-    /* margin-top: 0px; */
 }
 
 
@@ -348,62 +418,36 @@ header,
 
 .added-visible {
     opacity: 5;
-    /* color: rgb(255, 74, 2); */
 }
-
-/* .image-container .added-img {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-    opacity: 5;
-} */
-
 
 /**second row**/
 
 .image-container2 div {
-    /* margin: 10px; */
     justify-content: space-evenly;
     width: 310px;
     height: 480px;
     padding: 20px;
-    /* outline: 2px solid red; */
     background: white;
     box-shadow: 1px 1px 10px #000;
     border-radius: 6px;
 }
 
 .image-container2 img {
-    /* width: 270px; */
-    /* height: 390px; */
     align-items: center;
     justify-content: center;
-    /* margin-left: 20px; */
-    /* margin-left: 10px; */
 }
 
 
 .image-container2 {
     display: flex;
     flex-wrap: wrap;
-    /* position: relative; */
-    /* bottom: 250px; */
     margin-left: 10px;
-    /* left: 0; */
 }
 
 .image-container2 p {
-    /* background: red; */
     font-size: 15px;
     font-family: arial;
 }
-
-/* .image-container2 #blu { */
-/* background: red; */
-/* position: relative; */
-/* right: 12px; */
-
-/* } */
 
 .image-container2 #blue {
     width: 250px;
@@ -424,16 +468,14 @@ header,
 
 
 .image-container2 button {
-    background: #ff9900;
+    background: #FFCE12;
     border: none;
     cursor: pointer;
     border-radius: 2px;
     font-size: 14px;
     padding: 8px 14px;
     font-weight: bold;
-    /* position: relative; */
     margin-left: 80px;
-    /* margin-top: 0px; */
 }
 
 
@@ -464,12 +506,9 @@ header,
 /**third row**/
 
 .image-container3 div {
-    /* margin: 10px; */
     justify-content: space-evenly;
     width: 640px;
-    /* height: 420px; */
     padding: 20px;
-    /* outline: 2px solid red; */
     background: white;
     box-shadow: 1px 1px 10px #000;
     border-radius: 6px;
@@ -480,11 +519,8 @@ header,
     width: 230px;
     height: 210px;
     object-fit: contain;
-    /* border: 2px solid yellow; */
     align-items: center;
-    /* border: 2px solid red; */
     justify-content: center;
-    /* margin-left: 20px; */
     margin-left: 120px;
 }
 
@@ -492,10 +528,7 @@ header,
 .image-container3 {
     display: flex;
     flex-wrap: wrap;
-    /* position: relative; */
-    /* bottom: 20px; */
     margin-left: 10px;
-    /* left: 0; */
 }
 
 .image-container3 p {
@@ -505,7 +538,7 @@ header,
 
 
 .image-container3 button {
-    background: #ff9900;
+    background: #FFCE12;
     padding: 8px 14px;
     cursor: pointer;
     font-weight: bold;
@@ -566,7 +599,7 @@ header,
 }
 
 .image-container4 button {
-    background: #ff9900;
+    background: #FFCE12;
     padding: 8px 14px;
     font-weight: bold;
     border-radius: 2px;
@@ -674,16 +707,10 @@ header,
 
 @media screen and (max-width: 601px) {
     .login-container2 #submit-error {
-        /* max-width:100%; */
         position: absolute;
         bottom: 218px;
         left: 500px;
     }
-
-    .login-container2 #
-    /* .login-container2 #submit-error i {
-        margin-left: 185px;
-    } */
 }
 
 @media screen and (min-width: 1366px) {
@@ -1014,7 +1041,6 @@ footer #top:hover {
     padding: 40px;
     gap: 100px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    /* border-bottom: 1px solid white; */
 }
 
 .footer-nav ul li {
@@ -1141,6 +1167,7 @@ footer #top:hover {
     margin-top: 10px;
     background: #FFCE12;
 }
+
 .new-user button {
     border: none;
     cursor: pointer;
