@@ -87,3 +87,4 @@ export const productsHTML4 = [{
     },
     image: 'products/book.jpg'
 }]
+

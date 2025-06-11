@@ -1,14 +1,13 @@
-import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
-hello();
-import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+// import { hello } from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
+// hello();
+// import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
-import {cart, addToCart, Cart2, Cart3, Cart4} from './Data/cart.js';
+import { cart, addToCart, Cart2, Cart3, Cart4 } from './Data/cart.js';
 import { products, productITEM, productLIST, productsHTML4 } from './Data/products.js';
 
-const today = dayjs();
-const deliveryDate = today.add(7, 'days');
-console.log(deliveryDate.format('dddd, MMMM, D'));
-
+// const today = dayjs();
+// const deliveryDate = today.add(7, 'days');
+// console.log(deliveryDate.format('dddd, MMMM, D'));
 
 let productsHTML = '';
 
@@ -133,13 +132,13 @@ document.querySelectorAll('.js-add-cart2')
 
             addCartButtons2.forEach((button, index) => {
                 button.addEventListener('click', () => {
-                    const messageDisplay = messageElement2[index]; 
+                    const messageDisplay = messageElement2[index];
 
-                    if (messageDisplay) {  
+                    if (messageDisplay) {
                         messageDisplay.classList.add('added-visible-js');
                         messageDisplay.innerHTML = 'Added';
 
-    
+
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
@@ -204,13 +203,13 @@ document.querySelectorAll('.js-add-cart3')
 
             addToCartButtons3.forEach((button, index) => {
                 button.addEventListener('click', () => {
-                    const messageDisplay3 = messageElement3[index]; 
+                    const messageDisplay3 = messageElement3[index];
 
-                    if (messageDisplay3) {  
+                    if (messageDisplay3) {
                         messageDisplay3.classList.add('added-visible-js3');
                         messageDisplay3.innerHTML = 'Added';
 
-                    
+
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
@@ -279,10 +278,10 @@ document.querySelectorAll('.js-add-cart4')
                 button.addEventListener('click', () => {
                     const messageDisplay4 = messageElement4[index];
 
-                    if (messageDisplay4) {  
+                    if (messageDisplay4) {
                         messageDisplay4.classList.add('added-visible-js4');
                         messageDisplay4.innerHTML = 'Added';
-                        
+
                         if (timeoutId) {
                             clearTimeout(timeoutId);
                         }
@@ -299,3 +298,5 @@ document.querySelectorAll('.js-add-cart4')
 
         });
     });
+
+
